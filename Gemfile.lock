@@ -532,6 +532,7 @@ GEM
     mime-types-data (3.2021.0225)
     mini_magick (4.11.0)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.3)
     minitest (5.14.4)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -546,6 +547,9 @@ GEM
     newrelic_rpm (7.0.0)
     nio4r (2.5.7)
     nobspw (0.6.2)
+    nokogiri (1.11.6)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.6)
@@ -820,6 +824,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -849,7 +854,7 @@ DEPENDENCIES
   virtus-multiparams
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.7.3p183
 
 BUNDLED WITH
    2.2.16
