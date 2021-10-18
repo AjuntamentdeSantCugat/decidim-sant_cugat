@@ -31,7 +31,7 @@ group :development do
   gem 'spring-watcher-listen'
 end
 
-group :production do
+group :production, :staging do
   gem 'dalli'
   gem 'lograge'
   gem 'newrelic_rpm'
