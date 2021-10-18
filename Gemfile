@@ -18,6 +18,7 @@ gem 'virtus-multiparams'
 gem 'faker'
 gem 'puma'
 gem 'uglifier'
+gem "progressbar"
 
 group :development, :test do
   gem 'byebug', platform: :mri
