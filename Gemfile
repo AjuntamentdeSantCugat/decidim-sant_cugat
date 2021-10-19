@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.2'
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.23-stable' }
+DECIDIM_VERSION = "0.24.2"
 
 gem 'decidim', DECIDIM_VERSION
 
