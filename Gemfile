@@ -39,6 +39,7 @@ group :production do
   gem 'sentry-raven'
   gem 'sidekiq'
   gem 'fog-aws'
+  gem "aws-sdk-s3", require: false
   # security fix for excon gem, which is a fog-aws dependency
   gem 'excon', '>= 0.71.0'
   gem 'rails_autoscale_agent'
