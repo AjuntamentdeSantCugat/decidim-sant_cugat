@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:PopulateTools/decidim-verify_wo_registration.git
+  remote: https://github.com/PopulateTools/decidim-verify_wo_registration.git
   revision: 1a003576c8b27cf394798e86a7587146d58ac755
   branch: release/0.25
   specs:
