@@ -2,6 +2,18 @@
   "name": "decidim_sant_cugat",
   "description": "decidim_sant_cugat - Direct and participatory democracy web platform based on Decidim framework",
   "keywords": [],
+  "stack": "heroku-20",
+  "buildpacks": [
+    {
+      "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
+    },
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
   "addons": [
     "heroku-postgresql:hobby-dev",
     "heroku-redis:hobby-dev",
