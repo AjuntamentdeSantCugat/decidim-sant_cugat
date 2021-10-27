@@ -19,6 +19,7 @@ gem 'virtus-multiparams'
 gem 'faker'
 gem 'puma'
 gem 'uglifier'
+gem "progressbar"
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -32,7 +33,7 @@ group :development do
   gem 'spring-watcher-listen'
 end
 
-group :production do
+group :production, :staging do
   gem 'dalli'
   gem 'lograge'
   gem 'newrelic_rpm'
