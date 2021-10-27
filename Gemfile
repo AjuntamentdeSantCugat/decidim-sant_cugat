@@ -4,14 +4,15 @@ source 'https://rubygems.org'
 
 ruby '2.7.3'
 
-DECIDIM_VERSION = "0.24.2"
+# DECIDIM_VERSION = "0.25.0"
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'as_migration_debug' }
 
 gem 'decidim', DECIDIM_VERSION
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
-gem 'decidim-term_customizer', git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer'
-gem 'decidim-verify_wo_registration', git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration.git"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "develop"
+gem "decidim-verify_wo_registration", git: "git@github.com:PopulateTools/decidim-verify_wo_registration.git", branch: "release/0.25"
 
 gem 'virtus-multiparams'
 
@@ -40,6 +41,7 @@ group :production, :staging do
   gem 'sentry-raven'
   gem 'sidekiq'
   gem 'fog-aws'
+  gem "aws-sdk-s3", require: false
   # security fix for excon gem, which is a fog-aws dependency
   gem 'excon', '>= 0.71.0'
   gem 'rails_autoscale_agent'

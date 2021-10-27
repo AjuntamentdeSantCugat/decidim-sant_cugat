@@ -21,3 +21,10 @@
 
 # Ignore public uploads
 public/uploads
+/public/decidim-packs
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
