@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.7.2'
+ruby '2.7.3'
 
 DECIDIM_VERSION = "0.24.2"
 
@@ -18,6 +18,7 @@ gem 'virtus-multiparams'
 gem 'faker'
 gem 'puma'
 gem 'uglifier'
+gem "progressbar"
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -31,7 +32,7 @@ group :development do
   gem 'spring-watcher-listen'
 end
 
-group :production do
+group :production, :staging do
   gem 'dalli'
   gem 'lograge'
   gem 'newrelic_rpm'

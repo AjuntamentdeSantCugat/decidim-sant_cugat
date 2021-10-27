@@ -617,6 +617,7 @@ GEM
     premailer-rails (1.11.1)
       actionmailer (>= 3)
       premailer (~> 1.7, >= 1.7.9)
+    progressbar (1.11.0)
     public_suffix (4.0.6)
     puffing-billy (2.4.1)
       addressable (~> 2.5)
@@ -876,6 +877,7 @@ DEPENDENCIES
   listen
   lograge
   newrelic_rpm
+  progressbar
   puma
   rails_autoscale_agent
   rspec-rails
@@ -889,7 +891,7 @@ DEPENDENCIES
   virtus-multiparams
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.7.3p183
 
 BUNDLED WITH
    2.2.16
