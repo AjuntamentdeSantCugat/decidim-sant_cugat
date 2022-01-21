@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.3'
 
-# DECIDIM_VERSION = "0.25.0"
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'as_migration_debug' }
+DECIDIM_VERSION = "0.25.2"
 
 gem 'decidim', DECIDIM_VERSION
 
