@@ -20,6 +20,9 @@ gem 'puma'
 gem 'uglifier'
 gem "progressbar"
 
+# Performance
+gem "appsignal", "= 3.0.6"
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'decidim-dev', DECIDIM_VERSION

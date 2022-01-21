@@ -83,6 +83,8 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     anchored (1.1.0)
+    appsignal (3.0.6)
+      rack
     ast (2.4.2)
     aws-eventstream (1.2.0)
     aws-partitions (1.516.0)
@@ -842,6 +844,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  appsignal (= 3.0.6)
   aws-sdk-s3
   byebug
   dalli
