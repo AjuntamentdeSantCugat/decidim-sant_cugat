@@ -15,6 +15,8 @@ ca:
   census_authorization_handler:
     age_under_14: Has de ser major de 14 anys per validar-te
   decidim:
+    accessibility:
+      front_page_link: Anar a la pàgina principal
     authorization_handlers:
       census_authorization_handler:
         explanation: Verifica't amb el padró municipal
