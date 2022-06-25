@@ -22,9 +22,6 @@
     "newrelic:wayne",
     "sendgrid:starter"
   ],
-  "scripts": {
-    "postdeploy":"rake db:schema:load db:migrate db:seed"
-  },
   "env": {
     "AWS_ACCESS_KEY_ID": {
       "required": true
