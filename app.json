@@ -22,9 +22,6 @@
     "newrelic:wayne",
     "sendgrid:starter"
   ],
-  "scripts": {
-    "postdeploy":"rake db:schema:load db:migrate db:seed"
-  },
   "env": {
     "AWS_ACCESS_KEY_ID": {
       "required": true
@@ -54,6 +51,21 @@
     "SECRET_KEY_BASE": {
       "description": "A secret used by Rails to identify sessions",
       "generator": "secret"
+    }
+  },
+  "cron": [
+    {
+      "command": "bundle exec rake decidim:open_data:export",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "command": "bundle exec rake decidim:metrics:all",
+      "schedule": "0 3 * * *"
+    }
+  ],
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rake db:migrate"
     }
   }
 }

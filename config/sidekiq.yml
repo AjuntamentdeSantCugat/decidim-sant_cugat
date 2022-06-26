@@ -3,6 +3,7 @@
   - default
   - events
   - mailers
+  - decidim_events
   - metrics
   - newsletter
   - exports
