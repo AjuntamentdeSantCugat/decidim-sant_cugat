@@ -62,8 +62,9 @@ class CensusAuthorizationHandler < Decidim::AuthorizationHandler
 
     return @response if defined?(@response)
 
-    connection = Faraday.new Rails.application.secrets.dig(:census, :url), ssl: { verify: false }
-    connection.basic_auth(Rails.application.secrets.dig(:census, :auth_user), Rails.application.secrets.dig(:census, :auth_pass))
+    connection = Faraday.new(Rails.application.secrets.dig(:census, :url), ssl: { verify: false }) do |builder|
+      builder.request :authorization, :basic, Rails.application.secrets.dig(:census, :auth_user), Rails.application.secrets.dig(:census, :auth_pass)
+    end
 
     response = connection.get do |request|
       request.params = request_params
