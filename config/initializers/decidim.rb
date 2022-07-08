@@ -5,6 +5,8 @@ Decidim.configure do |config|
   config.mailer_sender    = "participacio@santcugat.cat"
   config.maximum_attachment_size = 100.megabytes
 
+  config.unconfirmed_access_for = 0.days
+
   # Uncomment this lines to set your preferred locales
   config.available_locales = %i{ca}
   config.default_locale = :ca
