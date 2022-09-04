@@ -6,7 +6,7 @@ ruby '2.7.3'
 
 DECIDIM_VERSION = "0.26.2"
 
-gem 'decidim', DECIDIM_VERSION
+gem 'decidim', git: "https://github.com/PopulateTools/decidim", branch: "release/0.26-stable-budgets-improvements"
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
