@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/PopulateTools/decidim
-  revision: be7c0f9051edc5e10131029877e754ea09708881
+  revision: 635b677ef6d8a49ea841ebe56348709a79894d05
   branch: release/0.26-stable-budgets-improvements
   specs:
     decidim (0.26.2)
