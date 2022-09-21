@@ -51,4 +51,4 @@ ca:
   devise:
     failure:
       user:
-        invalid: L'usuari no és vàlid
+        invalid: Segons el cens, les teves dades no són correctes o no compleixes els requisits per participar.
