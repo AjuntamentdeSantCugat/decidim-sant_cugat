@@ -1,34 +1,14 @@
-<%
+<% ppp = ParticipatoryProcessPicker2022.new(current_user) %>
 
-# Maps district councils with processes
-mapping = {
-  "CB1" => "/processes/nucliantic2022",
-  "CB2" => "/processes/centreest2022",
-  "CB3" => "/processes/centreoest2022",
-  "CB4" => "/processes/lafloresta2022",
-  "CB5" => "/processes/mirasol2022",
-  "CB6" => "/processes/lesplanes2022",
-  "CB7" => ""
-}
-process_url = nil
-process_group_url = '/processes_groups/3'
-
-if current_user
-  authorizations = current_user.extended_data["authorizations"]
-  if authorizations
-    if authorization = authorizations.find{ |a| a["name"] == "census_authorization_handler" }
-      if district_council = authorization.dig("metadata", "district_council")
-        process_url = mapping[district_council]
-      end
-    end
-  end
-end
-%>
-
-<% if process_url.present? %>
+<% if ppp.process_url.present? %>
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll("a[href*='<%= process_group_url %>']").forEach((a) => a.setAttribute("href", "<%= process_url %>"));
+  document.querySelectorAll("a[href*='<%= ParticipatoryProcessPicker2022::PROCESS_GROUP_URL %>']").forEach((a) => {
+    a.setAttribute("href", "<%= ppp.process_url %>");
+    a.dataset.open = "loginModal";
+    a.dataset.redirectUrl = "<%= ppp.process_url %>";
+    a.addEventListener("click", (e) => e.preventDefault());
+  });
 });
 </script>
 <% end %>

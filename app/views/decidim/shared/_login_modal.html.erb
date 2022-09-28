@@ -1,0 +1,34 @@
+<% ppp = ParticipatoryProcessPicker2022.new(nil) %>
+
+<div class="reveal two_columns" id="loginModal" data-reveal>
+  <div class="reveal__header">
+    <h3 class="reveal__title"><%= t("verify_wo_registration.login_modal.title") %></h3>
+    <button class="close-button" data-close aria-label="Close modal"
+      type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row">
+    <div class="columns medium-6">
+        <div class="columns medium-centered">
+          <h5><%= t("verify_wo_registration.login_modal.col1_title") %></h5>
+          <div class="columns medium-centered">
+            <div class="text-center">
+              <%= link_to(t("verify_wo_registration.login_modal.col1_only_verify_btn"),
+                          Decidim::VerifyWoRegistration::Engine.routes.url_helpers.new_verification_path({
+                            component_id: ppp.component_id,
+                            redirect_url: ppp.process_url || URI(request.original_fullpath).path,
+                            votable_gid: "gid"
+                          }), class: "button expanded") %>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="columns medium-6">
+        <div class="columns medium-centered">
+          <h5><%= t("verify_wo_registration.login_modal.col2_title") %></h5>
+          <%= render "decidim/shared/verify_wo_registration_login_modal_col2" %>
+        </div>
+    </div>
+  </div>
+</div>
