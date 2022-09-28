@@ -39,7 +39,7 @@ namespace :anonymize do
   end
 
   def default_password
-    "decidim123456789"
+    "deciPass123456"
   end
 
   def default_encrypted_password
