@@ -18,9 +18,9 @@ class ParticipatoryProcessPicker2022
   def initialize(current_user)
     @distrinct_council = nil
 
-    return if current_user.nil?
+    return if current_user.nil? || current_user.extended_data.nil?
 
-    authorizations = current_user.extended_data["authorizations"]
+    authorizations = current_user.extended_data.dig("authorizations")
     if authorizations
       if authorization = authorizations.find{ |a| a["name"] == "census_authorization_handler" }
         @district_council = authorization.dig("metadata", "district_council")
@@ -29,7 +29,11 @@ class ParticipatoryProcessPicker2022
   end
 
   def process_url
-    MAPPING[@distrinct_council || MAPPING.keys.first]
+    if @district_council.nil?
+      PROCESS_GROUP_URL
+    else
+      MAPPING[@distrinct_council]
+    end
   end
 
   def component_id

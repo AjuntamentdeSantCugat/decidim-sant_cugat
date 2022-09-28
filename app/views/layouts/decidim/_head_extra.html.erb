@@ -1,14 +1,14 @@
 <% ppp = ParticipatoryProcessPicker2022.new(current_user) %>
 
-<% if ppp.process_url.present? %>
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll("a[href*='<%= ParticipatoryProcessPicker2022::PROCESS_GROUP_URL %>']").forEach((a) => {
-    a.setAttribute("href", "<%= ppp.process_url %>");
-    a.dataset.open = "loginModal";
-    a.dataset.redirectUrl = "<%= ppp.process_url %>";
-    a.addEventListener("click", (e) => e.preventDefault());
+    <% if current_user.nil? %>
+      a.dataset.open = "loginModal";
+      a.addEventListener("click", (e) => e.preventDefault());
+      a.dataset.redirectUrl = "/parcicipatory_process_redirect";
+    <% end %>
+    a.setAttribute("href", "/parcicipatory_process_redirect");
   });
 });
 </script>
-<% end %>
