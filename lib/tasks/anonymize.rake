@@ -39,7 +39,7 @@ namespace :anonymize do
   end
 
   def default_password
-    "santcugat123456789"
+    "decidim123456789"
   end
 
   def default_encrypted_password
