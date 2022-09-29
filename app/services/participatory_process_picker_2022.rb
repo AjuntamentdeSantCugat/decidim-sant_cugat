@@ -38,7 +38,11 @@ class ParticipatoryProcessPicker2022
 
   def component_id
     @component_id ||= begin
-      slug = process_url.split("/").last.strip
+      slug = if @distrinct_council.nil?
+               MAPPING.values.first.split("/").last.strip
+             else
+               process_url.split("/").last.strip
+             end
 
       if process = process_group.participatory_processes.find_by(slug: slug)
         if component = process.components.where(manifest_name: "proposals").first
