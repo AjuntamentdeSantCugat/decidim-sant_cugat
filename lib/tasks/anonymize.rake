@@ -68,7 +68,7 @@ namespace :anonymize do
   task all: %i(users user_groups admins create_default_users)
 
   task users: [:check, :environment] do
-    with_progress Decidim::User.where.not("email ~* ?", "@(populate\.tools)"), name: "users" do |user|
+    with_progress Decidim::User.where.not("email ~* ?", "@(santcugat\.cat)").where.not("email ~* ?", "@(populate\.tools)"), name: "users" do |user|
       user.update_columns(
         email: "user-#{user.id}@example.com",
         name: "Anonymized User #{user.id}",
