@@ -174,7 +174,7 @@ GIT
 
 GIT
   remote: https://github.com/PopulateTools/decidim-verify_wo_registration.git
-  revision: 8afa22fa5fb2dc1ddf352e8ea04bb2ada2bb7204
+  revision: 2415caa460e7f228ee9473fc1da58f8fa2991cd7
   branch: improve-ui-texts
   specs:
     decidim-verify_wo_registration (0.0.3)
