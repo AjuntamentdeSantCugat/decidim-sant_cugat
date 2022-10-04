@@ -65,6 +65,7 @@
   ],
   "scripts": {
     "dokku": {
+      "predeploy": "dokku config:set decidim-sant-cugat APP_VERSION=`dokku git:report decidim-sant-cugat --git-sha` --no-restart",
       "postdeploy": "bundle exec rake db:migrate"
     }
   }
