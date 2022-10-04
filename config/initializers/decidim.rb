@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 Decidim.configure do |config|
   config.application_name = "Decidim Sant Cugat"
-  config.mailer_sender    = "participacio@santcugat.cat"
+  config.mailer_sender    = Rails.env.production? ? "participacio@santcugat.cat" : "noreply@decidim-review-apps.populate.tools"
   config.maximum_attachment_size = 100.megabytes
 
   config.unconfirmed_access_for = 0.days
