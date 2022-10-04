@@ -42,7 +42,7 @@ group :production, :staging do
   gem 'newrelic_rpm'
   gem 'sendgrid-ruby'
   gem 'sentry-raven'
-  gem 'sidekiq'
+  gem 'sidekiq', '~> 6.5', '>= 6.5.7'
   gem 'fog-aws'
   gem "aws-sdk-s3", require: false
   # security fix for excon gem, which is a fog-aws dependency
