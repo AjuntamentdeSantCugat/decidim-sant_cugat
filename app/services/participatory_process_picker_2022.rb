@@ -30,9 +30,20 @@ class ParticipatoryProcessPicker2022
 
   def process_url
     if @district_council.nil?
-      PROCESS_GROUP_URL
+      host + PROCESS_GROUP_URL
     else
-      MAPPING[@distrinct_council]
+      host + MAPPING[@distrinct_council]
+    end
+  end
+
+  def host
+    case Rails.env
+    when "production"
+      "https://decidim.santcugat.cat"
+    when "staging"
+      "https://decidim-sant-cugat.populate.tools"
+    else
+      "http://localhost:3000"
     end
   end
 
