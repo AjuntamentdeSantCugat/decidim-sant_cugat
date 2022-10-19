@@ -35,7 +35,18 @@ class ParticipatoryProcessPicker2022
 
   def process_url
     if @district_council.nil?
-      host + PROCESS_GROUP_URL
+      if current_user.nil?
+        return host + PROCESS_GROUP_URL
+      else
+        authorizations = current_user.extended_data.dig("authorizations")
+        if authorizations.empty?
+          redirect_url = host + "/parcicipatory_process_redirect"
+          redirect_to host + "/authorizations/new?handler=census_authorization_handler&redirect_url=#{redirect_url}"
+        else
+          flash[:notice] = "No se ha encontrado el proceso en el que puedes votar"
+          return host + PROCESS_GROUP_URL
+        end
+      end
     else
       host + (MAPPING[@district_council] || PROCESS_GROUP_URL)
     end
