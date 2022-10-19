@@ -37,7 +37,7 @@ class ParticipatoryProcessPicker2022
     if @district_council.nil?
       host + PROCESS_GROUP_URL
     else
-      host + (MAPPING[@distrinct_council] || PROCESS_GROUP_URL)
+      host + (MAPPING[@district_council] || PROCESS_GROUP_URL)
     end
   end
 
