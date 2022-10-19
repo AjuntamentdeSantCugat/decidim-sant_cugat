@@ -18,7 +18,9 @@ class ParticipatoryProcessPicker2022
   def initialize(current_user)
     @distrinct_council = nil
 
-    return if current_user.nil? || current_user.extended_data.nil?
+    if current_user.nil? || current_user.extended_data.nil?
+      Rails.logger.info "[ParticipatoryProcessPicker2022] User extended data not found"
+    end
 
     authorizations = current_user.extended_data.dig("authorizations")
     if authorizations
@@ -26,13 +28,15 @@ class ParticipatoryProcessPicker2022
         @district_council = authorization.dig("metadata", "district_council")
       end
     end
+    Rails.logger.info "[ParticipatoryProcessPicker2022] Authorizations: #{authorizations}"
+    Rails.logger.info "[ParticipatoryProcessPicker2022] District council: #{@district_council}"
   end
 
   def process_url
     if @district_council.nil?
       host + PROCESS_GROUP_URL
     else
-      host + MAPPING[@distrinct_council]
+      host + (MAPPING[@distrinct_council] || PROCESS_GROUP_URL)
     end
   end
 
