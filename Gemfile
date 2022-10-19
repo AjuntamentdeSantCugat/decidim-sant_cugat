@@ -38,16 +38,12 @@ end
 
 group :production, :staging do
   gem 'dalli'
-  gem 'lograge'
-  gem 'newrelic_rpm'
   gem 'sendgrid-ruby'
-  gem 'sentry-raven'
   gem 'sidekiq', '~> 6.5', '>= 6.5.7'
   gem 'fog-aws'
   gem "aws-sdk-s3", require: false
   # security fix for excon gem, which is a fog-aws dependency
   gem 'excon', '>= 0.71.0'
-  gem 'rails_autoscale_agent'
 end
 
 group :test do
