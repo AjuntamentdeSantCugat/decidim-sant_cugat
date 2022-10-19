@@ -20,6 +20,7 @@ class ParticipatoryProcessPicker2022
 
     if current_user.nil? || current_user.extended_data.nil?
       Rails.logger.info "[ParticipatoryProcessPicker2022] User extended data not found"
+      return
     end
 
     authorizations = current_user.extended_data.dig("authorizations")
