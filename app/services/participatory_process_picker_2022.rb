@@ -5,6 +5,8 @@ class ParticipatoryProcessPicker2022
   PROCESS_GROUP_URL = '/processes_groups/3'
   PROCESS_GROUP_ID = 3
 
+  attr_reader :current_user
+
   MAPPING = {
     "CB1" => "/processes/nucliantic2022",
     "CB2" => "/processes/centreest2022",
@@ -16,6 +18,7 @@ class ParticipatoryProcessPicker2022
   }
 
   def initialize(current_user)
+    @current_user = current_user
     @distrinct_council = nil
 
     if current_user.nil? || current_user.extended_data.nil?
