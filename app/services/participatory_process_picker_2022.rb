@@ -97,10 +97,12 @@ class ParticipatoryProcessPicker2022
   end
 
   def decidim_authorization_metadata
-    return nil if current_user.nil?
+    return {} if current_user.nil?
 
     if authorization = Decidim::Authorization.where(decidim_user_id: current_user.id).first
       authorization.metadata
+    else
+      {}
     end
   end
 end
