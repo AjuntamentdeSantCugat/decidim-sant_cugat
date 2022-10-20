@@ -44,7 +44,7 @@ class ParticipatoryProcessPicker2022
         authorizations = current_user.extended_data.dig("authorizations")
         if authorizations.nil? || authorizations.empty?
           redirect_url = host + "/parcicipatory_process_redirect"
-          return host + "/verify_wo_registration/verifications/new?component_id=504&redirect_url=#{redirect_url}"
+          return host + "/authorizations/new?handler=census_authorization_handler&redirect_url=#{redirect_url}"
         else
           flash[:notice] = "No se ha encontrado el proceso en el que puedes votar"
           return host + PROCESS_GROUP_URL
