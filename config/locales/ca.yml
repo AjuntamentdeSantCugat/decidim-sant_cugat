@@ -12,6 +12,8 @@ ca:
         day: Dia
         month: Mes
         year: Any
+    extra_explanation:
+      district: Barri
   census_authorization_handler:
     age_under_14: Has de ser major de 14 anys per validar-te
   decidim:
