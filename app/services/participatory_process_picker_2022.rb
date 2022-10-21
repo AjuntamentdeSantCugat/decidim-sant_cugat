@@ -84,10 +84,10 @@ class ParticipatoryProcessPicker2022
     return {} if current_user.nil?
 
     if current_user.extended_data.empty?
-      decidim_authorization_metadata
+      decidim_authorization_metadata.presence || {}
     elsif authorizations = current_user.extended_data.dig("authorizations")
       if authorization = authorizations.find{ |a| a["name"] == "census_authorization_handler" }
-        authorization.dig(:metadata)
+        authorization.dig(:metadata).presence || {}
       else
         {}
       end
