@@ -2,13 +2,15 @@
 
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll("a[href*='<%= ParticipatoryProcessPicker2022::PROCESS_GROUP_URL %>']").forEach((a) => {
-    <% if current_user.nil? %>
-      a.dataset.open = "loginModal";
-      a.addEventListener("click", (e) => e.preventDefault());
-      a.dataset.redirectUrl = "/parcicipatory_process_redirect";
-    <% end %>
-    a.setAttribute("href", "/parcicipatory_process_redirect");
-  });
+  if(window.location.pathname === "/") {
+    document.querySelectorAll("a[href*='<%= ParticipatoryProcessPicker2022::PROCESS_GROUP_URL %>']").forEach((a) => {
+      <% if current_user.nil? %>
+        a.dataset.open = "loginModal";
+        a.addEventListener("click", (e) => e.preventDefault());
+        a.dataset.redirectUrl = "/parcicipatory_process_redirect";
+      <% end %>
+      a.setAttribute("href", "/parcicipatory_process_redirect");
+    });
+  }
 });
 </script>
