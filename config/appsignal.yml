@@ -8,6 +8,7 @@ default: &defaults
     - ActionController::InvalidCrossOriginRequest
     - ActionController::RoutingError
     - ActionController::UnknownFormat
+    - ActiveStorage::FileNotFoundError
   enable_frontend_error_catching: true
   enable_gc_instrumentation: true
 
