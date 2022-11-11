@@ -46,9 +46,9 @@ class ParticipatoryProcessPicker2022
   def component_id
     @component_id ||= begin
       slug = if district_council.blank?
-               MAPPING.values.first.split("/")[1]
+               MAPPING.values.first.split("/")[2]
              else
-               process_url.split("/")[1]
+               process_url.split("/")[2]
              end
 
       if process = process_group.participatory_processes.find_by(slug: slug)
