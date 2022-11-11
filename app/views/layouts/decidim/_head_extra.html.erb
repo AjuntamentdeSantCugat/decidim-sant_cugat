@@ -3,7 +3,7 @@
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
   if(window.location.pathname === "/") {
-    document.querySelectorAll("a[href*='<%= ParticipatoryProcessPicker2022::PROCESS_GROUP_URL %>']").forEach((a) => {
+    document.querySelectorAll("a[href*='processes_groups/3']").forEach((a) => {
       <% if current_user.nil? %>
         a.dataset.open = "loginModal";
         a.addEventListener("click", (e) => e.preventDefault());
