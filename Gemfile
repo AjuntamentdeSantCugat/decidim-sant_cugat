@@ -12,6 +12,7 @@ gem 'decidim', git: "https://github.com/PopulateTools/decidim", branch: "release
 # Read more: https://github.com/mainio/decidim-module-term_customizer
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "release/0.26-stable"
 gem "decidim-verify_wo_registration", git: "https://github.com/PopulateTools/decidim-verify_wo_registration.git", branch: "improve-ui-texts"
+gem "decidim-decidim_awesome"
 
 gem 'virtus-multiparams'
 gem 'doorkeeper', '5.5.4'
