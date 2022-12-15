@@ -8,13 +8,13 @@ class ParticipatoryProcessPicker2022
   attr_reader :current_user, :district_council
 
   MAPPING = {
-    "CB1" => "/processes/nucliantic2022",
-    "CB2" => "/processes/centreest2022",
-    "CB3" => "/processes/centreoest2022",
-    "CB4" => "/processes/lafloresta2022",
-    "CB5" => "/processes/mirasol2022",
-    "CB6" => "/processes/lesplanes2022",
-    "CB7" => ""
+    "CB1" => "/processes/nucliantic2022/f/545/budgets/10/projects",
+    "CB2" => "/processes/centreest2022/f/544/budgets/9/projects",
+    "CB3" => "/processes/centreoest2022/f/542/budgets/7/projects",
+    "CB4" => "/processes/lafloresta2022/f/543/budgets/8/projects",
+    "CB5" => "/processes/mirasol2022/f/546/budgets/11/projects",
+    "CB6" => "/processes/lesplanes2022/f/547/",
+    "CB7" => "/pages/quipotvotaralspressupostos"
   }
 
   def initialize(current_user)
@@ -46,9 +46,9 @@ class ParticipatoryProcessPicker2022
   def component_id
     @component_id ||= begin
       slug = if district_council.blank?
-               MAPPING.values.first.split("/").last.strip
+               MAPPING.values.first.split("/")[2]
              else
-               process_url.split("/").last.strip
+               process_url.split("/")[2]
              end
 
       if process = process_group.participatory_processes.find_by(slug: slug)
