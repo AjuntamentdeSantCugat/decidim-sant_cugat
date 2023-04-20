@@ -46,6 +46,9 @@ Decidim.configure do |config|
   # take over user accounts.
   #
   config.enable_html_header_snippets = true
+
+  # Set max requests
+  config.throttling_max_requests = 500
 end
 
 Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth|
@@ -55,4 +58,10 @@ Decidim::Verifications.register_workflow(:census_authorization_handler) do |auth
     options.attribute :district_council, type: :string, required: false
     options.attribute :district, type: :string, required: false
   end
+end
+
+# API configuration
+Rails.application.config.to_prepare do
+  Decidim::Api::Schema.max_complexity = 5000
+  Decidim::Api::Schema.max_depth = 50
 end
