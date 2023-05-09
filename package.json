@@ -17,6 +17,9 @@
     "jquery-ui": "^1.13.2",
     "jsrender": "^1.0.13",
     "leaflet.featuregroup.subgroup": "^1.0.2",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^8.3.2",
     "punycode": "^2.3.0",
     "select2": "^4.1.0-rc.0"
   },
