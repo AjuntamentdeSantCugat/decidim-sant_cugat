@@ -9,6 +9,16 @@ GIT
       decidim-proposals (>= 0.20)
 
 GIT
+  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
+  revision: 016ab767f6b60eef1632c1a9839e2b1e25924115
+  branch: main
+  specs:
+    decidim-decidim_awesome (0.9.1)
+      decidim-admin (>= 0.26.0, < 0.28)
+      decidim-core (>= 0.26.0, < 0.28)
+      sassc (~> 2.3)
+
+GIT
   remote: https://github.com/mainio/decidim-module-term_customizer.git
   revision: 5a8d4c67972ef10cd52e774d64a3c7cff9bc9325
   branch: master
@@ -292,10 +302,6 @@ GEM
     decidim-debates (0.27.2)
       decidim-comments (= 0.27.2)
       decidim-core (= 0.27.2)
-    decidim-decidim_awesome (0.9.1)
-      decidim-admin (>= 0.26.0, < 0.28)
-      decidim-core (>= 0.26.0, < 0.28)
-      sassc (~> 2.3)
     decidim-dev (0.27.2)
       axe-core-rspec (~> 4.1.0)
       byebug (~> 11.0)
@@ -853,7 +859,7 @@ DEPENDENCIES
   dalli
   database_cleaner
   decidim (= 0.27.2)
-  decidim-decidim_awesome
+  decidim-decidim_awesome!
   decidim-dev (= 0.27.2)
   decidim-term_customizer!
   decidim-verify_wo_registration!
