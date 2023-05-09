@@ -31,3 +31,5 @@ yarn-debug.log*
 
 # Env vars
 .rbenv-vars
+
+public/uploads
