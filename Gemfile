@@ -2,15 +2,15 @@
 
 source 'https://rubygems.org'
 
-ruby '2.7.3'
+ruby RUBY_VERSION
 
-DECIDIM_VERSION = "0.26.2"
+DECIDIM_VERSION = "0.27.2"
 
-gem 'decidim', git: "https://github.com/PopulateTools/decidim", branch: "release/0.26-stable-budgets-improvements"
+gem 'decidim', DECIDIM_VERSION
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "release/0.26-stable"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "master"
 gem "decidim-verify_wo_registration", git: "https://github.com/PopulateTools/decidim-verify_wo_registration.git", branch: "improve-ui-texts"
 gem "decidim-decidim_awesome"
 
@@ -23,7 +23,10 @@ gem 'uglifier'
 gem "progressbar"
 
 # Performance
-gem "appsignal", "= 3.0.6"
+gem "appsignal"
+
+# Fixes an error with Ruby 3.1.2 and Psych 4.0.0
+gem "psych", "< 4"
 
 group :development, :test do
   gem 'byebug', platform: :mri
