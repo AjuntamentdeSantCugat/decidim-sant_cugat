@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/PopulateTools/decidim-verify_wo_registration.git
-  revision: 2415caa460e7f228ee9473fc1da58f8fa2991cd7
-  branch: improve-ui-texts
-  specs:
-    decidim-verify_wo_registration (0.0.3)
-      decidim-budgets (>= 0.20)
-      decidim-core (>= 0.20)
-      decidim-proposals (>= 0.20)
-
-GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
   revision: a5fb3423cb09379e2cbf40e001e44325834b31c2
   branch: main
@@ -862,7 +852,6 @@ DEPENDENCIES
   decidim-decidim_awesome!
   decidim-dev (= 0.27.2)
   decidim-term_customizer!
-  decidim-verify_wo_registration!
   doorkeeper (= 5.5.4)
   excon (>= 0.71.0)
   faker
