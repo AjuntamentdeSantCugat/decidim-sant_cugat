@@ -12,7 +12,7 @@ default: &defaults
   enable_frontend_error_catching: true
   enable_gc_instrumentation: true
   ignore_actions:
-    - "LinksController#new"
+    - "Decidim::LinksController#new"
     - "ActiveStorage::BlobsController#show"
     - "ActiveStorage::RepresentationsController#show"
 
