@@ -12,9 +12,14 @@ default: &defaults
   enable_frontend_error_catching: true
   enable_gc_instrumentation: true
   ignore_actions:
-    - "Decidim::LinksController#new"
+    - "Decidim::ManifestsController#show"
+    - "ActiveStorage::Representations::RedirectController#show"
+    - "ActiveStorage::DiskController#show"
     - "ActiveStorage::BlobsController#show"
     - "ActiveStorage::RepresentationsController#show"
+    - "Decidim::ErrorsController#internal_server_error"
+    - "Decidim::ErrorsControlle#not_found"
+    - "Decidim::LinksController#new"
 
 development:
   <<: *defaults
