@@ -18,6 +18,12 @@
 
 # Ignore rspec failures history
 .rspec-failures
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
 
 # Ignore public uploads
 public/uploads
@@ -31,3 +37,9 @@ yarn-debug.log*
 
 # Env vars
 .rbenv-vars
+
+# Static files
+app/views/static/
+
+# Tailwind
+tailwind.config.js
