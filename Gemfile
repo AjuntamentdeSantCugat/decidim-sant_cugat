@@ -17,7 +17,6 @@ gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-te
 # gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration.git", branch: "master"
 gem "decidim-decidim_awesome"
 
-gem 'virtus-multiparams'
 gem 'doorkeeper', '5.5.4'
 
 gem 'faker'
