@@ -2,16 +2,19 @@
 
 source 'https://rubygems.org'
 
-ruby '2.7.3'
+ruby '3.0.6'
 
-DECIDIM_VERSION = "0.26.2"
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.27-stable" }.freeze
 
-gem 'decidim', git: "https://github.com/PopulateTools/decidim", branch: "release/0.26-stable-budgets-improvements"
+gem 'decidim', DECIDIM_VERSION
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "release/0.26-stable"
-gem "decidim-verify_wo_registration", git: "https://github.com/PopulateTools/decidim-verify_wo_registration.git", branch: "improve-ui-texts"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "release/0.27-stable"
+# verify_wo_registration module is prepared to 0.28 in master and includes the
+# code of improve-ui-texts of the PopulateTools fork. Uncomment this after the
+# upgrade to 0.28
+# gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration.git", branch: "master"
 gem "decidim-decidim_awesome"
 
 gem 'virtus-multiparams'
