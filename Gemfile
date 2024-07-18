@@ -2,22 +2,19 @@
 
 source 'https://rubygems.org'
 
-ruby '3.0.6'
+ruby '3.1.2'
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.27-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.28-stable" }.freeze
 
 gem 'decidim', DECIDIM_VERSION
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "release/0.27-stable"
-# verify_wo_registration module is prepared to 0.28 in master and includes the
-# code of improve-ui-texts of the PopulateTools fork. Uncomment this after the
-# upgrade to 0.28
-# gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration.git", branch: "master"
-gem "decidim-decidim_awesome"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "main"
+gem "decidim-verify_wo_registration", git: "https://github.com/CodiTramuntana/decidim-verify_wo_registration.git", branch: "master"
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome.git", branch: "develop"
 
-gem 'doorkeeper', '5.5.4'
+gem 'doorkeeper', '5.7.0'
 
 gem 'faker'
 gem 'puma'
