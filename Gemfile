@@ -7,6 +7,7 @@ ruby '3.1.2'
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.28-stable" }.freeze
 
 gem 'decidim', DECIDIM_VERSION
+gem "decidim-templates", DECIDIM_VERSION
 
 # A Decidim module to customize the localized terms in the system.
 # Read more: https://github.com/mainio/decidim-module-term_customizer
