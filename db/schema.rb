@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_18_105234) do
+ActiveRecord::Schema.define(version: 2025_01_09_184225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -348,7 +348,10 @@ ActiveRecord::Schema.define(version: 2024_07_18_105234) do
     t.integer "weight_total", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["decidim_proposal_id"], name: "decidim_awesome_extra_fields_on_proposal"
+    t.string "private_body"
+    t.string "decidim_proposal_type", null: false
+    t.datetime "private_body_updated_at"
+    t.index ["decidim_proposal_id", "decidim_proposal_type"], name: "index_decidim_awesome_proposal_extra_fields_on_decidim_proposal"
   end
 
   create_table "decidim_awesome_vote_weights", force: :cascade do |t|
@@ -1516,6 +1519,20 @@ ActiveRecord::Schema.define(version: 2024_07_18_105234) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_decidim_system_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_decidim_system_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "decidim_templates_templates", force: :cascade do |t|
+    t.integer "decidim_organization_id", null: false
+    t.string "templatable_type"
+    t.bigint "templatable_id"
+    t.jsonb "name", null: false
+    t.jsonb "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.json "field_values", default: {}
+    t.string "target"
+    t.index ["decidim_organization_id"], name: "index_decidim_templates_organization"
+    t.index ["templatable_type", "templatable_id"], name: "index_decidim_templates_templatable"
   end
 
   create_table "decidim_term_customizer_constraints", force: :cascade do |t|
