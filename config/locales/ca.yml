@@ -50,7 +50,3 @@ ca:
         district_councils:
           one: La participació està restringida a les persones adscrites al consell de barri %{district_concils}.
           other: 'La participació està restringida a les persones adscrites a algun dels següents consells de barri: %{district_councils}.'
-  devise:
-    failure:
-      user:
-        invalid: Segons el cens, les teves dades no són correctes o no compleixes els requisits per participar.
