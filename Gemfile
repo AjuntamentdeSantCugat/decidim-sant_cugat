@@ -23,7 +23,7 @@ gem 'uglifier'
 gem "progressbar"
 
 # Performance
-gem "appsignal", "= 3.11.0"
+gem "appsignal"
 
 group :development, :test do
   gem 'byebug', platform: :mri
