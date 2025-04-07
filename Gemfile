@@ -21,6 +21,7 @@ gem 'faker'
 gem 'puma'
 gem 'uglifier'
 gem "progressbar"
+gem "json", "2.9.1"
 
 # Performance
 gem "appsignal"
