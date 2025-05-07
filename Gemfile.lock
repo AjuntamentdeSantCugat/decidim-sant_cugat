@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/decidim-ice/decidim-module-decidim_awesome.git
-  revision: 4e80fb7235d3933b7be7d807870d61e81d141b65
+  revision: 2118a82f2ec480e887e9a213ce797a55f80a18da
   branch: users_autoblock
   specs:
     decidim-decidim_awesome (0.11.2)
